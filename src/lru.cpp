@@ -3,7 +3,7 @@
 #include <algorithm> // std::find
 
 PaginadorLRU::PaginadorLRU(std::size_t tamanho)
-  : memory{ tamanho, PaginaLRU{ PaginaVazia, -1 } }
+  : memory(tamanho, PaginaVaziaLRU)
 { }
 
 bool PaginadorLRU::acessar(int pagina) {

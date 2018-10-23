@@ -20,6 +20,9 @@ struct PaginaLRU {
   }
 };
 
+// Define o que é uma página vazia no contexto das páginas LRU
+constexpr PaginaLRU PaginaVaziaLRU { PaginaVazia, -1 };
+
 // PaginadorLRU realiza paginação via LRU
 class PaginadorLRU : public Paginador {
 public:

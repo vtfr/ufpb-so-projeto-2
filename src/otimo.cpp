@@ -4,14 +4,10 @@
 #include <algorithm> // std::find
 
 PaginadorOtimo::PaginadorOtimo(std::size_t tamanho, const std::vector<int>& acessos)
-  : memory{ }
+  : memory(tamanho, PaginaVazia)
   , futuro{ acessos }
   , indexFuturo{ 0 }
-{
-  memory.resize(tamanho);
-  for (auto& pagina : memory)
-    pagina = PaginaVazia;
-}
+{ }
 
 // Acessa uma página. Retorna true caso ela tenha sido encontrada
 bool PaginadorOtimo::acessar(int pagina) {

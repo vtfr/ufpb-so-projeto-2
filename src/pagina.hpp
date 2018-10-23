@@ -13,7 +13,7 @@ public:
   virtual bool acessar(int pagina) = 0;
 
   // Realiza um paginamento com um paginador qualquer
-  static int paginar(const std::vector<int>& acessos, Paginador* paginador);
+  int paginar(const std::vector<int>& acessos);
 };
 
 #endif // PROJETO_SO_2_PAGINA

@@ -3,12 +3,8 @@
 #include <algorithm> // std::find
 
 PaginadorFIFO::PaginadorFIFO(std::size_t tamanho)
-  : memory{ }
-{
-  memory.resize(tamanho);
-  for (auto& pagina : memory)
-    pagina = PaginaVazia;
-}
+  : memory(tamanho, PaginaVazia)
+{ }
 
 // FIFO é um Paginador que mantêm uma queue de tamanho constante onde cada
 // inserção remove o último elemento

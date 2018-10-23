@@ -1,11 +1,10 @@
 # Victor Franco Vieira Lima
 
-CC=g++
-CPPFLAGS=-Isrc -std=c++11 -Wall -Wextra -O3
+CXXFLAGS = -Isrc -std=c++11 -Wall -Wextra -O3
 
-SOURCES=$(wildcard src/*.cpp)
-OBJECTS=$(SOURCES:.cpp=.o)
-BINARY=projeto
+SOURCES = $(wildcard src/*.cpp)
+OBJECTS = $(SOURCES:.cpp=.o)
+BINARY = projeto
 
 all: build
 
@@ -14,8 +13,11 @@ clear:
 
 build: $(BINARY)
 
+debug: CXXFLAGS += -DDEBUG
+debug: $(BINARY)
+
 $(BINARY): $(OBJECTS)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 %.o: %.cpp
-	$(CC) $(CPPFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@

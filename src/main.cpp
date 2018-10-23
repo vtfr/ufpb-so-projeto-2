@@ -34,13 +34,14 @@ int main() {
   }
 
   // Executa paginação
-  PaginadorFIFO fifo { quadros };
-  PaginadorLRU lru { quadros };
-  PaginadorOtimo otm { quadros, acessos };
+  const int falhasFIFO = (PaginadorFIFO { quadros }).paginar(acessos);
+  const int falhasOTM = (PaginadorOtimo { quadros, acessos }).paginar(acessos);
+  const int falhasLRU = (PaginadorLRU { quadros }).paginar(acessos);
 
-  std::cout << "FIFO " << Paginador::paginar(acessos, &fifo) << std::endl;
-  std::cout << "OTM " << Paginador::paginar(acessos, &otm) << std::endl;
-  std::cout << "LRU " << Paginador::paginar(acessos, &lru) << std::endl;
+  std::cout
+    << "FIFO " << falhasFIFO << std::endl
+    << "OTM " << falhasOTM << std::endl
+    << "LRU " << falhasLRU << std::endl;
 
   return 0;
 }
