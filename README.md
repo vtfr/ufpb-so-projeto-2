@@ -5,7 +5,15 @@ Segundo projeto da disciplina de Sistemas Operacionais sobre Paginação de Mem�
 
 ## Descrição do Projeto
 
-Foi requisitado a implementação de três algoritmos de paginação de memória virtual: **FIFO, LRU e Ótimo**. O programa deverá ler da entrada padrão STDIN o número de quadros que a memória virtual terá e, em seguida, os acessos de memória feitos em sequência. No final da execução o programa deverá reportar pelo STDOUT a quantidade de erros de cada algoritmo.
+Foi requisitado a implementação de três algoritmos de paginação de memória virtual: **FIFO, LRU e Ótimo**. O programa deverá ler da entrada padrão ```STDIN``` o número de quadros que a memória virtual terá e, em seguida, os acessos de memória feitos em sequência. No final da execução o programa deverá reportar pelo ```STDOUT``` a quantidade de erros de cada algoritmo.
+
+## Instalação
+
+No diretório do projeto, execute
+
+    $ make
+    
+Para gerar o binário ```projeto```.
 
 ## Execução
 
