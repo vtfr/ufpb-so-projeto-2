@@ -2,7 +2,7 @@
 
 #include <algorithm> // std::find
 
-PaginadorFIFO::PaginadorFIFO(int tamanho)
+PaginadorFIFO::PaginadorFIFO(std::size_t tamanho)
   : memory{ }
 {
   memory.resize(tamanho);

@@ -11,17 +11,12 @@
 #include <vector>
 
 int main() {
-  int quadros;
+  std::size_t quadros;
   std::vector<int> acessos;
 
   // Lê número de quadros
   if (!(std::cin >> quadros)) {
     debug_message("[main] Falha lendo o número de quadros");
-    return 1;
-  }
-  
-  if (quadros <= 0) {
-    debug_message("[main] Número inválido de quadros");
     return 1;
   }
 

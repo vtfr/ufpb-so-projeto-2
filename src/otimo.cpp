@@ -3,7 +3,7 @@
 #include <debug.hpp> // debug_message
 #include <algorithm> // std::find
 
-PaginadorOtimo::PaginadorOtimo(int tamanho, const std::vector<int>& acessos)
+PaginadorOtimo::PaginadorOtimo(std::size_t tamanho, const std::vector<int>& acessos)
   : memory{ }
   , futuro{ acessos }
   , indexFuturo{ 0 }

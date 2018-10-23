@@ -1,7 +1,8 @@
 #ifndef PROJETO_SO_2_LRU
 #define PROJETO_SO_2_LRU
 
-#include <pagina.hpp>
+#include <pagina.hpp> // Paginador
+#include <cstddef> // std::size_t
 
 // PaginaLRU é uma página usada pelo LRU que contém o número de acessos
 struct PaginaLRU {
@@ -22,7 +23,7 @@ struct PaginaLRU {
 // PaginadorLRU realiza paginação via LRU
 class PaginadorLRU : public Paginador {
 public:
-  PaginadorLRU(int tamanho);
+  PaginadorLRU(std::size_t tamanho);
 
   bool acessar(int pagina);
 

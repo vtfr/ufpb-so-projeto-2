@@ -2,7 +2,7 @@
 #include <debug.hpp> // debug_message
 #include <algorithm> // std::find
 
-PaginadorLRU::PaginadorLRU(int tamanho)
+PaginadorLRU::PaginadorLRU(std::size_t tamanho)
   : memory{ tamanho, PaginaLRU{ PaginaVazia, -1 } }
 { }
 
