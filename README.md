@@ -15,6 +15,12 @@ No diretório do projeto, execute
     
 Para gerar o binário ```projeto```.
 
+## Desenvolvimento
+
+Para compilar a versão de debug, execute:
+
+    $ make debug
+
 ## Execução
 
 - [x] Leitura da entrada padrão
