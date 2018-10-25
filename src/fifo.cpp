@@ -1,6 +1,7 @@
 #include <fifo.hpp>
 
 #include <algorithm> // std::find
+#include <debug.hpp> // debug_message
 
 PaginadorFIFO::PaginadorFIFO(std::size_t tamanho)
   : memory(tamanho, PaginaVazia)
@@ -13,12 +14,12 @@ bool PaginadorFIFO::acessar(int pagina) {
   if (std::find(memory.begin(), memory.end(), pagina) != memory.end())
     return true;
 
+  debug_message("[FIFO] Rodando memória e inserindo página")
+
   // Caso a página não tenha sido encontrada, move todos os elementos para a
   // esquerda e, no final, insere a página necessária
-  const int tamanho = memory.size() - 1;
-  for (int i = 0; i < tamanho; i++)
-    memory[i] = memory[i + 1];
-  memory[tamanho] = pagina;
+  std::rotate(memory.begin(), memory.begin() + 1, memory.end());
+  memory.back() = pagina;
 
   return false;
 }
