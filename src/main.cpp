@@ -35,7 +35,7 @@ int main() {
 
   // Executa paginação
   const int falhasFIFO = (PaginadorFIFO { quadros }).paginar(acessos);
-  const int falhasOTM = (PaginadorOtimo { quadros, acessos }).paginar(acessos);
+  const int falhasOTM = (PaginadorOtimo { quadros, acessos.cbegin(), acessos.cend() }).paginar(acessos);
   const int falhasLRU = (PaginadorLRU { quadros }).paginar(acessos);
 
   std::cout
