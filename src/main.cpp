@@ -34,8 +34,14 @@ int main() {
   }
 
   // Executa paginação
+  debug_message("[main] Executando FIFO");
   const int falhasFIFO = (PaginadorFIFO { quadros }).paginar(acessos);
-  const int falhasOTM = (PaginadorOtimo { quadros, acessos.cbegin(), acessos.cend() }).paginar(acessos);
+
+  debug_message("[main] Executando OTM");
+  const int falhasOTM = (PaginadorOtimo { quadros, acessos.cbegin(),
+    acessos.cend() }).paginar(acessos);
+
+  debug_message("[main] Executando LRU");
   const int falhasLRU = (PaginadorLRU { quadros }).paginar(acessos);
 
   std::cout

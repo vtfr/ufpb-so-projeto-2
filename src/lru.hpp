@@ -9,13 +9,13 @@ struct PaginaLRU {
   int pagina;
   int rodada;
 
-  // Retorna se a página é a mesma
-  inline bool operator==(int p) const {
-    return pagina == p;
+  // Verifica se a página tem o ID correto
+  inline bool operator==(int id) const {
+    return pagina == id;
   }
 
   // Retorna quem tem a menor rodada
-  inline bool operator<(const PaginaLRU& rhs ) {
+  inline bool operator<(const PaginaLRU& rhs ) const {
     return rodada < rhs.rodada;
   }
 };
