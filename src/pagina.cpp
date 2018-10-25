@@ -1,19 +1,12 @@
 #include <pagina.hpp>
-#include <debug.hpp>
+#include <debug.hpp> // debug_message
+#include <algorithm> // std::count_if
 
 // Realiza um paginamento com um paginador qualquer
 int Paginador::paginar(const std::vector<int>& acessos) {
-  int falhas = 0;
-
-  // Para todos os acessos, tenta paginar usando o paginador em questão,
-  // contanto o número de falhas
-  for (auto acesso : acessos) {
-    debug_message("[Paginar] Acessando página: " << acesso);
-    if (!acessar(acesso)) {
-      debug_message("[Paginar] Página não encontrada: " << acesso);
-      falhas++;
-    }
-  }
-
-  return falhas;
+  return std::count_if(acessos.cbegin(), acessos.cend(),
+    [this](int i) {
+      debug_message("[Paginar] Acessando página: " << i);
+      return !this->acessar(i);
+    });
 }
