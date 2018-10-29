@@ -1,5 +1,3 @@
-# Victor Franco Vieira Lima
-
 CXXFLAGS = -Isrc -std=c++11 -Wall -Wextra -O3
 
 SOURCES = $(wildcard src/*.cpp)
