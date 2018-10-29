@@ -4,12 +4,10 @@ SOURCES = $(wildcard src/*.cpp)
 OBJECTS = $(SOURCES:.cpp=.o)
 BINARY = projeto
 
-all: build
+all: $(BINARY)
 
 clear:
 	rm -f $(OBJECTS) $(BINARY)
-
-build: $(BINARY)
 
 debug: CXXFLAGS += -DDEBUG
 debug: $(BINARY)
